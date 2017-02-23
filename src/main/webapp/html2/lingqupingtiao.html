@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<html lang="en">
+<head>
+<title>退休证及银行卡领取凭条打印</title>
+<style>
+.underline_input{border-left: 0px;border-right: 0px;border-top: 0px;border-bottom:0px;text-align: center;font-weight:bold;font-size:14px;}
+.cp_table{
+	width: 100%;
+	margin-top: 50px;
+}
+.cp_table tr{height: 50px;}
+.cp_table tr td{
+	text-align: center;
+	font-size:16px;
+}
+</style>
+<script type="text/javascript" language="javascript" src="../js/jquery/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" language="javascript" src="../js/jquery/plugins/json/jquery.json-2.2.min.js"></script>
+
+</head>
+<body>
+		<!--<input type="button" id="printbtn" value="打印" onclick="smsprint()"/>-->
+		<div style="width:820px;margin:0px auto;">
+			
+			<table cellpadding="0" cellspacing="0" border="1" class="cp_table">
+			
+				
+				<tr>
+					
+					<td colspan="8" align="left" style="text-align: left;">
+						<div style="padding:20px 23px 40px 23px;text-align:justify; text-justify:inter-ideograph;line-height:35px ">
+							<div align="center"><h1>银行卡领取凭条</h3></div>
+							<span style="float: left; margin-left: 35px;"><b><input type="text" style=" border:none; outline: none;background-color: #FFFFFF; width:80px;text-align:center;font-weight:bold;font-size:14px;" id="retireinfoname" style="width:70px;"/>同志，&nbsp;你的退休申请已经受理，&nbsp;申报编号为<INPUT id="retirebatchno" style=" border:none; outline: none;background-color: #FFFFFF; width:85px;text-align:center;font-weight:bold;font-size:14px;" />。
+							&nbsp;请于<INPUT id="start_year_1" style="text-align:center; border:none; outline: none;background-color: #FFFFFF; width:50px;font-weight:bold;font-size:14px;" />年
+							<INPUT id="start_month_1" style="text-align:center; border:none; outline: none;background-color: #FFFFFF; width:30px;font-weight:bold;font-size:14px;" />月
+							<INPUT id="start_day_1" style="text-align:center; border:none; outline: none;background-color: #FFFFFF; width:30px;font-weight:bold;font-size:14px;" />日至
+							<INPUT id="end_year_1" style="text-align:center; border:none; outline: none;background-color: #FFFFFF; width:50px;font-weight:bold;font-size:14px;" />年
+							<INPUT id="end_month_1" style="text-align:center; border:none; outline: none;background-color: #FFFFFF; width:30px;font-weight:bold;font-size:14px;" />月
+							<INPUT id="end_day_1" style="text-align:center; border:none; outline: none;background-color: #FFFFFF; width:30px;font-weight:bold;font-size:14px;" />日，</b>
+							<b>由本人持此凭条及身份证原件到随县社会养老保险局发放科领取。咨询电话：发放科3339786 退管科3338186。</b></span>
+							<span style="float: left; margin-left: 50px;">注：如果人社局审核的出生日期、参加工作时间与您填写的存在差异，或缴费账号存在其他问题，我们</span><br>
+							将及时跟您联系，但领取银行卡的时间需要顺延。<br>
+						<span style="float: right; margin-right: 120px;">经办人：</span> <br/>
+						<!-- <span style="float: left; margin-left: 25px;">审核人：<INPUT id="checkname" style=" border:none; outline: none;background-color: #FFFFFF; width:80px;"/></span> -->	
+						<span style="float: right; margin-right: 120px;">日期：</span>
+			</div>
+					</td>
+				</tr>
+
+			</table>
+
+			
+		</div>
+		
+		
+</body>
+<script>
+var id = window.location.search.split("=")[1];
+$._ajax({
+	url: "../model/queryretireById.action",
+	type:'post',
+	dataType:'json',
+	data:{"rid":id},
+	success: function(data){
+		if(data.op=="timeout"){
+			alert("登陆超时，请重新登陆");
+			return;
+		}
+		
+		if(data.total>0){
+			data = data.rows[0].retireInfo;
+			$('#retireinfoname').val(data.name);
+			$('#retirebatchno').val(data.retirebatchno);
+			
+			var batchinfo_id = data.batchinfoId;
+			
+			$._ajax({
+				url: "../model/querynewbatch.action",
+				type:'post',
+				dataType:'json',
+				data:{},
+				success: function(data){
+						if(data.total==0){
+							return;
+						}else{
+							for(var i = 0;i<data.total;i++){
+								var batchInfo = data.rows[i].batchInfo;
+								if(batchinfo_id == batchInfo.id){
+									var starttime = batchInfo.getstarttime;
+									var endtime = batchInfo.getendtime;
+									$('#start_year_1').val(starttime.split(" ")[0].split("-")[0]);
+									$('#start_month_1').val(starttime.split(" ")[0].split("-")[1]);
+									$('#start_day_1').val(starttime.split(" ")[0].split("-")[2]);
+									
+									$('#end_year_1').val(endtime.split(" ")[0].split("-")[0]);
+									$('#end_month_1').val(endtime.split(" ")[0].split("-")[1]);
+									$('#end_day_1').val(endtime.split(" ")[0].split("-")[2]);
+								}
+							}
+						}
+					}
+			});
+		}
+	}
+})
+</script>
+</html>

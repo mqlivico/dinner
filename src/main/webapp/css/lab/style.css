@@ -1,0 +1,451 @@
+body {
+	/*background: url(/isw/image/lab/bg.jpg) no-repeat 50% 0 #B8B9B3;*/
+	font-family: "Helvetica Neue", Helvetica, "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", Arial, sans-serif;
+	font-size: 1.5em !important;
+	line-height: 3em !important;
+	position: relative;
+}
+
+input, button, select, textarea, p {
+    font-family: "Helvetica Neue", Helvetica, "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", Arial, sans-serif;
+}
+
+.none {
+	display: none;
+}
+
+/* header */
+
+#header {
+	margin-bottom: 20px;
+}
+
+#feedbackRow {
+	margin-bottom: 10px;
+}
+
+#feedback {
+	background: url(/images/lab/feedback.png) no-repeat;
+	padding: 6px 0 20px;
+	height: 20px;
+	margin-left: 840px;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 16px;
+	text-shadow: 0 2px 1px #000000;
+}
+
+#feedback a {
+	color: #FFFFFF;
+}
+
+#logo a {
+	background: url(/img/lab/logo.png) no-repeat 30px 0;
+	padding: 20px 0;
+	text-indent: -9999px;
+	width: 300px;
+	float: left;
+	display: block;
+}
+
+#navi {
+	background: url(/img/lab/navi.png) no-repeat;
+	float: right;
+	margin: 10px 0;
+	width: 475px;
+	height: 50px;
+}
+
+#navi li {
+	float: left;
+	padding: 15px 0;
+	line-height: 20px;
+}
+
+#navi li a {
+	color: #FFFFFF;
+	font-weight: bold;
+	text-shadow: 0 1px 1px #000000;
+	margin: 0 0 0 28px;
+}
+
+/* main */
+
+#jionNow {
+	position: absolute;
+	left: 50%;
+	top: 75%;
+	width: 40%;
+}
+
+#jionNow4r {
+	position: absolute;
+	left: 20%;
+	top: 20%;
+	width: 55%;
+}
+
+#jionNow P {
+	color: #000000;
+	margin-bottom: 20px;
+	text-shadow: 0 1px 2px #FFFFFF;
+}
+
+/*#jionNowButton {
+	background: url(/images/lab/jionNow.png) no-repeat;
+/*	background: url(../../../isw/image/lab/jionNow.png) no-repeat;*/
+/*	width: 100%;
+	padding: 0.7em 0.3em 1em;
+	border: none;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 1.6em;
+	text-shadow: 0 0.1em 0.06em #000000;
+	line-height: 2em;
+}*/
+
+#prelogin {
+	/*position:absolute;
+	z-index:1;
+	right:5px;
+	top:0px;	*/
+	background: url(/images/login/feedback.png) no-repeat;
+	line-height: 40px;
+	text-shadow: 0 3px 1px #000000;
+	padding: 10px 40px 15px;
+	width:100%;
+	text-align: center;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+
+#prelogon {
+	/*position:absolute;
+	z-index:1;
+	right:5px;
+	top:0px;	*/
+	background: url(/images/lab/jionNow.png) no-repeat;
+	width: 100%;
+	padding: 5px 50px 10px;
+	border: none;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 32px;
+	text-shadow: 0 2px 1px #000000;
+	line-height: 30px;
+}
+
+#jionNowButton a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+#info {
+	position: absolute;
+	bottom: 0;
+	background: url(/images/lab/30.png) repeat;
+	margin: 0;
+	color: #FFFFFF;
+}
+
+#info ul {
+	float: left;
+	margin: 0;
+	width: 900px;
+}
+
+#info li {
+	float: left;
+	margin: 20px 0 20px 80px;
+	padding-left: 80px;
+	display: inline;
+	height: 55px;
+}
+
+.dataNow {
+	font-size: 20px;
+
+}
+
+#onlineUser {
+	background: url(/images/lab/onlineUser.png) no-repeat;
+}
+
+#onlineJoome {
+	background: url(/images/lab/onlineJoome.png) no-repeat;
+}
+
+#netUsage {
+	background: url(/images/lab/netUsage.png) no-repeat;
+}
+
+#refresh {
+	float: right;
+	width: 32px;
+	height: 32px;
+	text-indent: -9999px;
+	margin: 8px 8px 0 0;
+}
+
+#introduce {
+	border-bottom: 1px solid #EEEEEE;
+	padding: 0 10px 10px;
+}
+
+/* pages */
+
+#pages {
+	background: rgba(255, 255, 255, 0.9);
+	min-height: 500px;
+	border: 12px solid rgba(255, 255, 255, 0);
+	border-radius: 3px;
+	box-shadow: 0 2px 3px rgba(60, 60, 60, 0.5);
+	position: relative;
+}
+
+#sideBar {
+	float: left;
+	min-height: 400px;
+	width: 200px;
+	background: rgba(200, 200, 200, 0.1);
+	border-radius: 2px;
+	box-shadow: 0 2px 1px rgba(60, 60, 60, 0.3);
+
+}
+
+#sideBar li {
+	margin: 20px 30px 20px 20px;
+	padding: 10px 20px;
+}
+
+#sideBar .sideBarHover {
+	background: none repeat scroll 0 0 #B0DDFF;
+	border-radius: 2px;
+	box-shadow: 0 2px 0 #78B4E2;
+	text-shadow: 0 1px 1px #FFFFFF;
+	margin-bottom: 30px;
+}
+
+#sideBar .sideBarHover a:hover {
+	text-decoration: none;
+}
+
+#content {
+	float: left;
+	width: 550px;
+	margin: 20px 40px;
+}
+
+#content h3 {
+	margin: 0 0 30px;
+}
+
+#content .section {
+	margin: 0 0 45px;
+}
+
+#content h4 {
+	margin: 0 0 15px;
+}
+
+#content p {
+	font-size: 14px;
+	line-height: 22px;
+	margin: 0 0 15px;
+	text-shadow: 0 1px 1px #FFFFFF;
+}
+
+.center {
+	text-align: center;
+}
+
+.italic {
+	font-style: italic;
+}
+
+form {
+	margin: 0;
+}
+
+#pages #contactForm {
+	border: 1px dashed #CCCCCC;
+	margin: 0 0 20px;
+	padding: 10px 0 0;
+}
+
+#city1, #city2, #city3 {
+	margin: 0 0 10px;
+	width: 91px;
+}
+
+.control-group {
+	margin: 20px 0;
+}
+
+.form-actions {
+	margin: 0;
+}
+
+/* footer */
+
+.main-footer {
+	background: url(/img/lab/60.png) repeat;
+	color: #ccc;
+	margin-top: 30px;
+	text-shadow: 0 1px 1px #000;
+	min-width: 964px;
+	width: 100%;
+}
+
+.main-footer .row {
+	height: 55px;
+}
+
+#miibeian {
+	margin: 0px;
+	padding: 10px 0;
+	width: 100%;
+	min-width: 964px;
+	text-align: center;
+	background: #333;
+}
+
+/* footer *media */
+
+#footer ul {
+	margin: 15px 0;
+}
+
+#footer li {
+	line-height: 24px;
+	margin: 0 15px;
+	float: left;
+}
+
+#footer a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+#footerList {
+	float: left;
+}
+
+#social {
+	float: right;
+}
+
+#social li a {
+	text-indent: -9999px;
+	width: 30px;
+	display: block;
+}
+
+#weibo {
+	background: url(/img/lab/weibo.png) no-repeat;
+}
+
+#twitter {
+	background: url(/img/lab/twitter.png) no-repeat;
+}
+
+#gplus {
+	background: url(/img/lab/gplus.png) no-repeat;
+}
+
+#yupoo {
+	background: url(/img/lab/yupoo.png) no-repeat;
+}
+
+#language_menu {
+	background: url(/img/lab/arrow.gif) no-repeat 65px 0;
+	padding: 0 20px 0 0;
+}
+
+.dropdown.open .dropdown-toggle {
+	background: none;
+}
+
+#language_list_bg {
+    background: url(/img/lab/60.png) repeat scroll 0 0 transparent;
+    float: left;
+    list-style: none;
+}
+
+#language_list {
+    bottom: 100%;
+    top: auto;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    min-width: 0;
+    left: -20px;
+    padding: 5px 0 0;
+    background: none;
+}
+
+#language_list li {
+	margin: 0;
+}
+
+#language_list a {
+	padding: 3px 30px 3px 20px;
+	width: 60px;
+}
+
+#language_list a:hover {
+	background: #999999;
+}
+
+/* others *media */
+
+#miibeian a {
+	color: #888888;
+}
+
+/* JS */
+
+#slider {
+	width:0%;
+	border-width:0px;
+	background-color: #CC0000;
+	color:white;
+	height: 2px;
+}
+#sliderParent {
+	width:100%;
+}
+
+/* 监控宝 */
+
+body div a img {
+	display: none;
+}
+
+/* Partners */
+
+.partner-list {
+	color: #000;
+	list-style: none;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	text-align: center;
+}
+
+.partner-list li {
+	float: left;
+	width: 260px;
+}
+
+.partner-list .even {
+	margin-left: 30px;
+}
+
+.partner-list img {
+	border: 0 none;
+	max-height: 80px;
+	max-width: 260px;
+	outline: 0 none;
+}

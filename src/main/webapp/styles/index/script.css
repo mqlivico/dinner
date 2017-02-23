@@ -1,0 +1,85 @@
+/*.id-container-isw-ad, .id-container-isw-ad *{margin:0; padding:0;}
+ 
+.id-container-isw-ad{width:120px; height:120px; overflow:hidden;position:absolute;}
+ 
+.slider2{width:3000px;}
+.slider2 li{float:left;}
+.slider2 img{ width:120ppx; height:120px; display:block;}
+ /*
+.btn,.page_list input{
+	PADDING-RIGHT: 2px; 
+	PADDING-LEFT: 2px; 
+	FONT-SIZE: 13px;
+	background-color:#CDEAFF; 
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#C4E6FF);
+	CURSOR: pointer; 
+	COLOR: black; 
+	outline:none;
+	margin:5px 5px;
+	height:20px;
+	line-height:20px;
+	border:1px solid #7B9EBD;
+}
+ 
+.num{ position:absolute; right:5px; bottom:5px;}
+.num li{
+	float: left;
+	color: #FF7300;
+	text-align: center;
+	line-height: 16px;
+	width: 16px;
+	height: 16px;
+	font-family: Arial;
+	font-size: 12px;
+	cursor: pointer;
+	overflow: hidden;
+	margin: 3px 1px;
+	border: 1px solid #FF7300;
+	background-color: #fff;
+}
+.num li.on{
+	color: #fff;
+	line-height: 21px;
+	width: 21px;
+	height: 21px;
+	font-size: 16px;
+	margin: 0 1px;
+	border: 0;
+	background-color: #FF7300;
+	font-weight: bold;
+}
+a:link, a:visited { color: #FFFC5A; text-decoration: none; font-weight: normal; } 
+a:active, a:hover { color: #CCFF00; text-decoration: underline; }
+ 
+.bc {font-size: 12px; overflow: hidden; display: block; background: #EDF7FF; border-right: 1px solid #B2D0EA; border-left: 1px solid #B2D0EA; margin: 0 0px; clear:both;} 
+*/
+
+.id-container-isw-ad, .id-container-isw-ad img{width:610px; height:97px;}
+.id-container-isw-ad{border:0px solid #333; position: absolute; z-index:2;right: 10px;}
+.id-container-isw-ad img{border:0;}
+
+.num{ position:absolute; right:5px; bottom:5px;}
+.num li{
+	float: left;
+	list-style:none;
+	color: #fff;
+	text-align: center;
+	line-height: 16px;
+	width: 16px;
+	height: 16px;
+	font-family: Arial;
+	font-size: 12px;
+	cursor: pointer;
+	margin: 1px;
+	border: 1px solid #707070;
+	background-color: #060a0b;
+}
+.num li.on{
+	line-height: 18px;
+	width: 18px;
+	height: 18px;
+	font-size: 14px;
+	border: 0;
+	background-color: #ce0609;
+	font-weight: bold;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<html lang="en">
+<head>
+<title>随县离退休人员登记表打印</title>
+<style>
+.underline_input{border:0px;text-align: center;font-size: 12px; font-weight:bold;}
+.cp_table{
+	margin-top: 50px;
+}
+</style>
+<script type="text/javascript" language="javascript" src="../js/jquery/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" language="javascript" src="../js/jquery/plugins/json/jquery.json-2.2.min.js"></script>
+
+</head>
+<body>
+		<!--<input type="button" id="printbtn" value="打印" onclick="smsprint()"/>-->
+		<div style="width:850px;margin:0px auto;">
+			<div align="center" ><font style="font-size: 36px;">随县离退休人员登记表</font></div>
+			<br><div style="font-size:18px;">
+				<span style="float: left;">单位全称：<span class="line_span">
+						<INPUT id="workspace" style=" border:none; outline: none;background-color: #FFFFFF; width:128px;font-weight:bold;font-size:14px;" readonly="readonly" > </span> </span> <span
+					style="float: right;">编号： <span class="line_span">
+						<INPUT id="retirebatchno" style=" border:none; outline: none;background-color: #FFFFFF; width:120px;font-weight:bold;font-size:14px;" readonly="readonly" /></span> </span>
+			</div>
+
+			<table cellpadding="0" cellspacing="0" border="2" class="cp_table">
+				<tr>
+					<td width="80" height="50" align="center">姓名</td>
+					<td width="80" height="50" align="center"><input type="text" class="underline_input" id="retireinfoname" />
+					</td >
+					<td width="80" height="50" align="center">性别</td>
+					<td width="80" height="50" align="center"><input type="text" class="underline_input" id="retireinfosex" /></td>
+					<td width="80" height="50" align="center">民族</td>
+					<td width="80" height="50" align="center"><input type="text" class="underline_input" id="minzu" value="汉"/></td>
+					<td width="80" height="160" align="center" rowspan="3"><font color="grey">贴<br>照<br>片</font></td>
+				</tr>
+
+				<tr>
+					<td colspan="1" width="80" height="60" align="center">身份证<br>号&nbsp;&nbsp;码</td>
+					<td colspan="3" width="200" height="60" align="center">&nbsp;<input type="text" class="underline_input"
+						id="paperno" />
+					</td>
+					<td width="80" height="60" align="center">参加工作<br>时&nbsp;&nbsp;间</td>
+					<td width="80" height="60" align="center"><input type="text" class="underline_input"
+						id="jobtime" /></td>
+					
+				</tr>
+
+				<tr>
+					<td width="80" height="60" align="center">待遇执行<br>时&nbsp;&nbsp;间</td>
+					<td width="80" height="60" align="center">
+						&nbsp;<input type="text" class="underline_input" id="runtime" />
+					</td >
+					<td width="80" height="60" align="center">离退休<br>类&nbsp;&nbsp;别</td>
+					<td width="80" height="60" align="center">
+						<input type="text" class="underline_input" id="peopletype" /></td>
+					<td width="80" height="60" align="center">离退休<br>费金额</td>
+					<td width="80" height="60" align="center">
+						&nbsp;<input type="text" class="underline_input" id="retireamount" /></td>
+					<!-- <td width="80" height="50" align="center"></td> -->
+					
+				</tr>
+				<tr>
+					<td colspan="2" width="80" height="60" align="center">离退休后居住地址</td>
+					<td colspan="3" width="80" height="60" align="center">&nbsp;<input type="text" class="underline_input"
+						id="address" />
+					</td>
+					<td width="80" height="60" align="center">联系<br>电话</td>
+					<td width="80" height="60" align="center"><input type="text" class="underline_input"
+						id="mobileno" /></td>
+					
+				</tr>
+
+				<tr>
+					<td colspan="2" width="80" height="60" align="center">配偶工作单位</td>
+					<td colspan="5" width="80" height="60" align="center">&nbsp;<input type="text" class="underline_input"
+						id="peiouworkspace" />
+					</td>
+					
+				</tr>
+				
+				<tr >
+					<td colspan="2" width="80" height="60" align="center">管理单位</td>
+					<td colspan="5" width="80" height="60" align="center">&nbsp;<input type="text" class="underline_input"
+						id="managerworkspace" value="随县社会养老保险局"/>
+					</td>
+					
+				</tr>
+			</table>
+
+			
+		</div>
+		
+		
+</body>
+<script>
+var id = window.location.search.split("=")[1];
+$._ajax({
+	url: "../model/queryretireById.action",
+	type:'post',
+	dataType:'json',
+	data:{"rid":id},
+	success: function(data){
+		if(data.op=="timeout"){
+			alert("登陆超时，请重新登陆");
+			return;
+		}
+		
+		if(data.total>0){
+			data = data.rows[0].retireInfo;
+			$('#retirebatchno').val(data.retirebatchno);
+			$('#retireinfoname').val(data.name);
+			$('#workspace').val(data.workspace);
+			$('#retireinfosex').val(data.sex==1?"男":"女");
+			$('#jobtime').val(data.jobtime.split("-")[0]+"年"+parseInt(data.jobtime.split("-")[1])+"月"+parseInt(data.jobtime.split("-")[2])+"日");
+			$('#paymentendtime').val(data.paymentendtime.split("-")[0]+"年"+parseInt(data.paymentendtime.split("-")[1])+"月"+parseInt(data.paymentendtime.split("-")[2])+"日");
+			$('#paperno').val(data.paperno);
+			$('#mobileno').val(data.mobileno);
+			$('#address').val(data.address);
+			
+		}
+	}
+})
+</script>
+</html>

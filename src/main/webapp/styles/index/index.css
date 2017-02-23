@@ -1,0 +1,77 @@
+@CHARSET "UTF-8";
+
+/* CSS Document */
+
+.btn{
+	PADDING-RIGHT: 5px; 
+	PADDING-LEFT: 5px; 
+	FONT-SIZE: 12px;
+	background-color:#CDEAFF; 
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#C4E6FF);
+	CURSOR: pointer; 
+	COLOR: black; 
+	PADDING-TOP: 2px; 
+	outline:none;
+	margin:0px 10px 0 0px;
+	border:1px solid #738aad;
+}
+
+table{
+	background-color:#ccc;  
+	padding:0;
+	margin:0;
+	font-size:12px;
+}
+caption{
+	background:#738aad;  
+	height:28px;
+	line-height:28px;
+	text-align:left;
+	color:#FFF;
+	font-weight:bold;
+	padding-left:20px;	
+}
+
+table th{
+	background:#efefef;
+	line-height:25px;
+	font-weight:normal;
+}
+table td{
+	line-height:25px;	
+}
+.table_layout td{
+	line-height:28px;
+	padding:0px 10px;
+	text-align:center;
+}
+table td.onover{
+	background:#ebf3fd
+}
+.table_layout tfoot td{
+	text-align:left	;
+	background:#efefef;
+
+}
+tfoot span{
+	float:right;	
+}
+tfoot a{
+	outline-style:none;
+	color:#000;
+	margin-right:6px;
+	text-decoration:underline;
+}
+tfoot a:hover{
+	color:#000;
+	text-decoration:underline;
+	text-decoration:none;
+}
+.btnposition{
+	float:right;
+	margin:0px 0px 0 0;
+	PADDING-TOP: 5px; 
+}
+
+
+

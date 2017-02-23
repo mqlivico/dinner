@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<html lang="en">
+<head>
+<title>湖北省企业职工退休条件审批表打印</title>
+<style>
+.underline_input{border:0px;text-align: center;font-size: 12px; font-weight:bold;}
+.cp_table{
+	margin-top: 50px;
+}
+</style>
+<script type="text/javascript" language="javascript" src="../js/jquery/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" language="javascript" src="../js/jquery/plugins/json/jquery.json-2.2.min.js"></script>
+
+</head>
+<body>
+<div style="width:855px;margin:0px auto;">
+  <div align="center" ><font style="font-size: 36px;">湖北省企业职工退休条件审批表</font></div>
+  <div style="font-size:18px;"> <span style="float: left;"> <span class="line_span">
+    <INPUT id="prjName" style=" border:none; outline: none;background-color: #FFFFFF; width:64px;" readonly="readonly" >
+    </span> </span> <span style="float: right;">编号： <span class="line_span">
+    <INPUT id="retirebatchno" style=" border:none; outline: none;background-color: #FFFFFF; width:120px;font-weight:bold;" readonly="readonly" />
+    </span> </span> </div>
+    <table width="100%" border="2" cellpadding="0" class="cp_table" cellspacing="0">
+  <tr>
+    <td width="80" height="50" align="center">姓名</td>
+    <td width="70" height="50" align="center" id="retireinfoname"></td>
+    <td width="80" height="50" align="center">性别</td>
+    <td width="80" height="50" id="retireinfosex" align="center"></td>
+    <td width="80" height="50" align="center">出生年月</td>
+    <td width="120" height="50" id="birthday" align="center"></td>
+    <td width="120" height="50" align="center">参加工作时间</td>
+    <td height="50" id="jobtime" align="center"></td>
+  </tr>
+  <tr>
+    <td height="50" colspan="2" align="center">间断工作时间</td>
+    <td height="50" colspan="4" id="gaptime" align="center"></td>
+    <td height="50" align="center">缴费截止时间</td>
+    <td height="50" align="center" id="paymentendtime"></td>
+  </tr>
+  <tr>
+    <td height="50" colspan="2" align="center">社会保障号码</td>
+    <td height="50" colspan="3" align="center" id="retireno"></td>
+    <td height="50" align="center">身份证号</td>
+    <td height="50" colspan="2" align="center" id="paperno"></td>
+  </tr>
+  <tr>
+    <td height="60" align="center" colspan="2">退休形式</td>
+    <td height="60" colspan="6">
+    &nbsp;&nbsp;&nbsp;<input name="peopletype" type="checkbox" value="1" />正常退休&nbsp;&nbsp;
+	<input name="peopletype" type="checkbox" value="2" />特殊工种退休&nbsp;&nbsp;
+	<input name="peopletype" type="checkbox" value="3" />因病退休&nbsp;&nbsp;
+	<input name="peopletype" type="checkbox" value="4" />退职&nbsp;&nbsp;
+	<input name="peopletype" type="checkbox" value="5" />军转干部退休</td>
+  </tr>
+  <tr>
+    <td height="70" align="center">职称</td>
+    <td height="70" id="jobtitle" align="center"></td>
+    <td width="110" height="70" align="center">转业军官职务</td>
+    <td height="70" id="jobtitle1" align="center"></td>
+    <td width="120" height="70" align="center">95年底前从事特殊工种年限</td>
+    <td height="70" id="before95" align="center"></td>
+    <td width="120" height="70" align="center">折算工龄换算缴费年限</td>
+    <td height="70" id="workage" align="center"></td>
+  </tr>
+  <tr>
+    <td width="100" height="70" align="center" colspan="2">改革前实际缴费年限</td>
+    <td height="70" ><INPUT id="ggqstjfnx_y" style=" border:none; outline: none;background-color: #FFFFFF; width:30px;" />年
+					<INPUT id="ggqstjfnx_m" style=" border:none; outline: none;background-color: #FFFFFF; width:20px;" />个月</td>
+    <td height="70" align="center" colspan="2">改革后实际缴费年限</td>
+    <td height="70"><INPUT id="gghstjfnx_y" style=" border:none; outline: none;background-color: #FFFFFF; width:30px;" />年
+					<INPUT id="gghstjfnx_m" style=" border:none; outline: none;background-color: #FFFFFF; width:20px;" />个月</td>
+    <td height="70" align="center">累计缴费年限</td>
+    <td height="70"><INPUT id="ljjfnx_y" style=" border:none; outline: none;background-color: #FFFFFF; width:30px;" />年
+					<INPUT id="ljjfnx_m" style=" border:none; outline: none;background-color: #FFFFFF; width:20px;" />个月</td>
+  </tr>
+  <tr>
+    <td height="60" colspan="2" align="center">批准退休时间</td>
+    <td height="60" colspan="2" id="retiretime" align="center"></td>
+    <td height="60" colspan="2" align="center">待遇执行时间</td>
+    <td height="60" colspan="2" align="center" id="runtime"></td>
+  </tr>
+  <tr>
+    <td height="60" colspan="8" align="center">参加工作后主要工作简历</td>
+  </tr>
+  <tr align="center">
+    <td height="60" colspan="3">时间</td>
+    <td height="60" colspan="3">工作单位</td>
+    <td height="60" colspan="2">职务或工种</td>
+  </tr>
+  <tr align="center">
+    <td height="60" colspan="3"><INPUT id="start_year_1" style=" border:none; outline: none;background-color: #FFFFFF; width:35px;font-weight:bold;font-size:14px;" />年<INPUT id="start_month_1" style=" border:none; outline: none;background-color: #FFFFFF; width:20px;font-weight:bold;font-size:14px;" />月----
+					<INPUT id="end_year_1" style=" border:none; outline: none;background-color: #FFFFFF; width:35px; font-weight:bold;font-size:14px;"/>年
+					<INPUT id="end_month_1" style=" border:none; outline: none;background-color: #FFFFFF; width:20px;font-weight:bold;font-size:14px;" />月</td>
+    <td height="60" colspan="3" id="workdesc_1" align="center"></td>
+    <td height="60" colspan="2">&nbsp;</td>
+  </tr>
+  <tr align="center">
+    <td height="60" colspan="3"><INPUT id="start_year_2" style=" border:none; outline: none;background-color: #FFFFFF; width:35px;font-weight:bold;font-size:14px;" />年<INPUT id="start_month_2" style=" border:none; outline: none;background-color: #FFFFFF; width:20px;font-weight:bold;font-size:14px;" />月----
+					<INPUT id="end_year_2" style=" border:none; outline: none;background-color: #FFFFFF; width:35px; font-weight:bold;font-size:14px;"/>年
+					<INPUT id="end_month_2" style=" border:none; outline: none;background-color: #FFFFFF; width:20px;font-weight:bold;font-size:14px;" />月</td>
+    <td height="60" colspan="3" id="workdesc_2" align="center"></td>
+    <td height="60" colspan="2">&nbsp;</td>
+  </tr>
+  <tr align="center">
+    <td height="60" colspan="3"><INPUT id="start_year_3" style=" border:none; outline: none;background-color: #FFFFFF; width:35px;font-weight:bold;font-size:14px;" />年<INPUT id="start_month_3" style=" border:none; outline: none;background-color: #FFFFFF; width:20px;font-weight:bold;font-size:14px;" />月----
+					<INPUT id="end_year_3" style=" border:none; outline: none;background-color: #FFFFFF; width:35px; font-weight:bold;font-size:14px;"/>年
+					<INPUT id="end_month_3" style=" border:none; outline: none;background-color: #FFFFFF; width:20px;font-weight:bold;font-size:14px;" />月</td>
+    <td height="60" colspan="3" id="workdesc_3" align="center"></td>
+    <td height="60" colspan="2">&nbsp;</td>
+  </tr>
+  <tr align="center">
+    <td height="120" colspan="2">职工个人签字</td>
+    <td height="120" colspan="2">&nbsp;本人申请按<INPUT id="shenqing1" style=" border:none; outline: none;background-color: #FFFFFF; width:50px;" /><br>
+					<INPUT id="shenqing2" style=" border:none; outline: none;background-color: #FFFFFF; width:80px;" /><br>
+					<INPUT id="shenqing3" style=" border:none; outline: none;background-color: #FFFFFF; width:30px;" />退休。<br><br>
+					<INPUT id="shenqing_y" style=" border:none; outline: none;background-color: #FFFFFF; width:30px;" />年
+					<INPUT id="shenqing_m" style=" border:none; outline: none;background-color: #FFFFFF; width:20px;" />月
+	  <INPUT id="shenqing_d" style=" border:none; outline: none;background-color: #FFFFFF; width:20px;" />日</td>
+    <td height="120" colspan="2">呈报单位意见</td>
+    <td height="120" colspan="2"><span style="float: right; margin-right: 120px;">(盖章)</span><span style="float: left; margin-left: 25px;">经办人：<INPUT id="empname" style=" border:none; outline: none;background-color: #FFFFFF; width:80px;"/></span>	<span style="float: right; margin-right: 40px;"><INPUT id="myyear" style=" border:none; outline: none;background-color: #FFFFFF; width:30px;"/>年
+			<INPUT id="mymonth" style=" border:none; outline: none;background-color: #FFFFFF; width:30px;"/>月
+	  <INPUT id="mydate" style=" border:none; outline: none;background-color: #FFFFFF; width:30px;"/>日</span></td>
+  </tr>
+  <tr>
+    <td height="190" colspan="8">
+    <b>人力资源和社会保障行政部门意见：</b>
+    <br/><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;该同志符合下列规定，准予退休。<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;国发〔1978〕104号文规定；<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;中办发〔2003〕29号文规定（军转干部提前退休）；<br/>
+    <span style="float: right; margin-right: 120px;">(盖章)</span> <br/>
+    <span style="float: left; margin-left: 25px;">审核人：<INPUT id="checkname" style=" border:none; outline: none;background-color: #FFFFFF; width:80px;"/></span><span style="float: right; margin-right: 60px;"><INPUT id="checkyear" style=" border:none; outline: none;background-color: #FFFFFF; width:30px;"/>年
+			<INPUT id="checkmonth" style=" border:none; outline: none;background-color: #FFFFFF; width:30px;"/>月
+			<INPUT id="checkdate" style=" border:none; outline: none;background-color: #FFFFFF; width:30px;"/>日</span>
+    </td>
+  </tr>
+  <tr>
+    <td height="70" colspan="8"><b>说明：</b>1、办理退休时需提供退休职工档案及本表一式三份；2、本表一律采用A4纸张，身份证复印在本表背面并附2寸近照一张。</td>
+  </tr>
+  <tr>
+    <td height="60" colspan="8"><b>联系电话：</b>
+      <INPUT id="mobileno" style=" border:none; outline: none;background-color: #FFFFFF; width:150px;font-weight:bold;font-size:16px;"/></td>
+  </tr>
+</table>
+
+</body>
+<script>
+var id = window.location.search.split("=")[1];
+$._ajax({
+	url: "../model/queryretireById.action",
+	type:'post',
+	dataType:'json',
+	data:{"rid":id},
+	success: function(data){
+		if(data.op=="timeout"){
+			alert("登陆超时，请重新登陆");
+			return;
+		}
+		
+		if(data.total>0){
+			data = data.rows[0].retireInfo;
+			$('#retirebatchno').val(data.retirebatchno);
+			$('#retireinfoname').html(data.name);
+			$('#retireinfosex').html(data.sex==1?"男":"女");
+			$('#birthday').html(data.birthday.split("-")[0]+"年"+parseInt(data.birthday.split("-")[1])+"月");
+			$('#jobtime').html(data.jobtime.split("-")[0]+"年"+parseInt(data.jobtime.split("-")[1])+"月");
+			$('#paymentendtime').html(data.paymentendtime.split("-")[0]+"年"+parseInt(data.paymentendtime.split("-")[1])+"月");
+			$('#retireno').html(data.retireno);
+			$('#paperno').html(data.paperno);
+			$('#mobileno').val(data.mobileno);
+			
+			$._ajax({
+				url: "../model/queryworkhistoryById.action",
+				type:'post',
+				dataType:'json',
+				data:{"rid":data.id},
+				success: function(d){
+					for(var i= 1 ;i<=d.total;i++){
+						var workHistory = d.rows[i-1].workHistory;
+						$('#start_year_'+i).val(workHistory.starttimeYear);
+						$('#start_month_'+i).val(workHistory.starttimeMonth);
+						$('#end_year_'+i).val(workHistory.endtimeYear);
+						$('#end_month_'+i).val(workHistory.endtimeMonth);
+						$('#workdesc_'+i).html(workHistory.workdesc);
+					}
+				}
+			})
+		}
+	}
+})
+</script>
+</html>

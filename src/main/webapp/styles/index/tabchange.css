@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+.kandyTabs{margin:0;padding:2px;border:1px solid #DDD;background:#f5f5f5;overflow:hidden;zoom:1;width:1050px;height:900px}
+.kandyTabs .tabtitle{margin:0;padding:0;line-height:22px;border-bottom:1px solid #DDD;}
+.kandyTabs .tabtitle .tabbtn{margin:0 4px 0 0;padding:0 5px;display:inline-block;background:#e5e5e5;border:1px solid #DDD;border-width:1px 1px 0;width:100px}
+.kandyTabs .tabtitle .tabcur{line-height:23px;background:#FFF;border-bottom:1px solid #FFF;font-weight:bold;color:#F00;margin-bottom:-1px;width:100px}
+.kandyTabs .tabbody{padding:5px;background:#FFF;border:1px solid #DDD;border-width:0 1px 1px;overflow:hidden;zoom:1}
+.kandyTabs .tabbody .tabcont{background:#FFF;height:800px}
+.kandyTabs .tabbody .tabroll .tabcont{margin:5px 0 0}
+
+.tabnav,.tabctrl,.tabpage{zoom:1}
+.tabnav em,tabctrl b{cursor:pointer;}
+.tabpage *{cursor:default;font-weight:normal}
+.tabprevno,.tabnextno{cursor:default!important}
+.tabprocess{height:5px;overflow:hidden;}
+
